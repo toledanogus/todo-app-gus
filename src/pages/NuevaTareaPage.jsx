@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setNuevaTarea } from "../store/slices/tareaSlice";
-import { tuThunkAction } from "../store/slices/thunks";
-tuThunkAction
+import { registrarEnBase } from "../store/slices/thunks";
+
 
 export const NuevaTareaPage = () => {
   //Constantes**************************************************
@@ -36,8 +36,18 @@ export const NuevaTareaPage = () => {
     setDescription(target.value)
   }
   const registrarNuevaTarea = () => {
-  dispatch(setNuevaTarea({nuevaTarea: [title, description, selection, selection2, selection3]}));
-  dispatch(tuThunkAction());
+    if (title != '' && description != '' && selection != '' && selection2 != '' && selection3 != '') {
+      dispatch(setNuevaTarea({nuevaTarea: [title, description, selection, selection2, selection3]}));
+      dispatch(registrarEnBase());
+      setTitle('');
+      setDescription('');
+      setSelection('');
+      setSelection2('');
+      setSelection3('');
+    } else{
+      alert('Ningún campo puede estar vacío');
+    }
+    
   }
 
   //Efectos********************************************************
@@ -70,9 +80,9 @@ export const NuevaTareaPage = () => {
             Prioridad:
             <select value={selection2} onChange={onHandleChange2}>
               <option value="">Elige una:</option>
-              <option value="alta">Alta</option>
-              <option value="normal">Normal</option>
-              <option value="baja">Baja</option>
+              <option value="3">Alta</option>
+              <option value="2">Normal</option>
+              <option value="1">Baja</option>
             </select>
           </li>
           <li>
