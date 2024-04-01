@@ -1,6 +1,6 @@
 import { tareaApi } from '../../api/tareaApi';
 import {store} from '../store';
-import { setTareas } from './tareaSlice';
+import { setTareas, setTarea } from './tareaSlice';
 
 export const registrarEnBase = () => async (dispatch, getState) => {
     const state = getState();
@@ -29,4 +29,17 @@ export const getTareas = () => async (dispatch, getState) => {
     console.log(`Obtenidas del mysql ${data}`);
     dispatch(setTareas({tareas: data}));
 
-}
+};
+
+export const getTarea = () => async (dispatch, getState) => {
+    const state = getState();
+    const tareaID = state.tarea.tareaID;
+
+    const jsonFiltro = new Object();
+    jsonFiltro['tareaID'] = tareaID;
+
+    const {data} = await tareaApi.post (`/getTareaID.php`, jsonFiltro);
+    console.log(`Obtenidas del mysql PARA UNAAAAA${data}`);
+    dispatch(setTarea({tarea: data}));
+
+};
