@@ -89,6 +89,12 @@ button{
   flex-basis: 50%; /* Ajusta este valor según necesites */
 }
 
+.lista-tareas{
+  width: 77%;
+  justify-content: center;
+  align-items: center;
+}
+
 td {
   white-space: nowrap;
   text-align: center;
@@ -156,6 +162,7 @@ img {
 fieldset{
   background-color:white;
   width: 70%;
+  margin-top: 10px;
 }
 
 #completa1, .completa1{

@@ -1,4 +1,4 @@
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { getTareas } from "../store/slices/thunks";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -21,68 +21,71 @@ export const ListaTareas = () => {
 
   const aInicio = () => {
     navigate("/inicio");
-  }
+  };
 
   //Efectos***********************************************************
   useEffect(() => {
     dispatch(getTareas());
   }, []);
 
-
   return (
     <>
       <h1>ListaTareas</h1>
       <h2 className="uper">{`${filtro}`}</h2>
-      <table>
-        <thead>
-          <th className="vacio"></th>
-          <th>Tarea</th>
-          <th>Completada</th>
-        </thead>
-
-        <tbody>
-          {tareas &&
-            tareas.map((elemento, index) => {
-              let imageSource;
-
-              if (elemento[2] === 1) {
-                imageSource = etiquetaImage1;
-              } else if (elemento[2] === 2) {
-                imageSource = etiquetaImage2;
-              } else if (elemento[2] === 3) {
-                imageSource = etiquetaImage3;
-              } else {
-                // Default image source if none of the conditions match
-                imageSource = etiquetaImage1;
-              }
-
-              return (
-                <tr key={index}>
-                  <td>
-                    <img src={imageSource} alt="" />
-                  </td>
-                  <td
-                    className="tituloTarea" id={`completa${elemento[3]}`}
-                    onClick={() => aDetalles(elemento[6])}
-                  >
-                    {elemento[0]}
-                  </td>
-                  <td className="centrado">
-                    {elemento[3] ? (
-                      <span className="arrow">✓</span>
-                    ) : (
-                      <span className="equis">x</span>
-                    )}
-                  </td>
-                </tr>
-              );
-            })}
-        </tbody>
-      </table>
       <div className="contenedorx">
-         <button className="aInicio" onClick={aInicio}>Inicio</button>
+        <table>
+          <thead>
+            <th className="vacio"></th>
+            <th>Tarea</th>
+            <th>Completada</th>
+          </thead>
+
+          <tbody>
+            {tareas &&
+              tareas.map((elemento, index) => {
+                let imageSource;
+
+                if (elemento[2] === 1) {
+                  imageSource = etiquetaImage1;
+                } else if (elemento[2] === 2) {
+                  imageSource = etiquetaImage2;
+                } else if (elemento[2] === 3) {
+                  imageSource = etiquetaImage3;
+                } else {
+                  // Default image source if none of the conditions match
+                  imageSource = etiquetaImage1;
+                }
+
+                return (
+                  <tr key={index}>
+                    <td>
+                      <img src={imageSource} alt="" />
+                    </td>
+                    <td
+                      className="tituloTarea"
+                      id={`completa${elemento[3]}`}
+                      onClick={() => aDetalles(elemento[6])}
+                    >
+                      {elemento[0]}
+                    </td>
+                    <td className="centrado">
+                      {elemento[3] ? (
+                        <span className="arrow">✓</span>
+                      ) : (
+                        <span className="equis">x</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
+        <div className="contenedorx">
+          <button className="aInicio" onClick={aInicio}>
+            Inicio
+          </button>
+        </div>
       </div>
-     
     </>
   );
 };
