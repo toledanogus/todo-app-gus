@@ -69,5 +69,16 @@ export const editTarea = () => async (dispatch, getState) => {
     jsonEditada['fecha'] = tareaEditada[3];
 
     const {data} = await tareaApi.post (`/editarTarea.php`, jsonEditada);
+    /* console.log(`Obtenidas del mysql Nada de nada${data}`); */
+};
+
+export const sendSolved = () => async (dispatch, getState) => {
+    const state = getState();
+    const solved = state.tarea.solved;
+
+    const jsonSolved = new Object();
+    jsonSolved['solved'] = solved;
+    console.log(`Esto voy a asignar al JSON: ${solved}`);
+    const {data} = await tareaApi.post (`/enviarResueltas.php`, jsonSolved);
     console.log(`Obtenidas del mysql Nada de nada${data}`);
 };

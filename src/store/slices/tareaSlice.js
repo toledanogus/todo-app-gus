@@ -10,6 +10,7 @@ name: 'tarea',
     tareaID:'',
     tarea:'',
     tareaEditada:'',
+    solved:'',
   },
   reducers: {
     setNuevaTarea: (state, action) => {
@@ -30,7 +31,10 @@ name: 'tarea',
     setTareaEditada:(state, action) => {
       state.tareaEditada = action.payload.tareaEditada;
     },
+    setSolved: (state, action) => {
+      state.solved = action.payload.solved;
+    }
   },
 })
 // Action creators are generated for each case reducer function
-export const { setNuevaTarea, setFiltro, setTareas, setTareaID, setTarea, setTareaEditada} = tareaSlice.actions;
+export const { setNuevaTarea, setFiltro, setTareas, setTareaID, setTarea, setTareaEditada, setSolved} = tareaSlice.actions;
