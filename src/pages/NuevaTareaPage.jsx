@@ -34,7 +34,7 @@ export const NuevaTareaPage = () => {
   };
   const onHandleChangeDescription = ({target}) => {
     setDescription(target.value)
-  }
+  };
   const registrarNuevaTarea = () => {
     if (title != '' && description != '' && selection != '' && selection2 != '' && selection3 != '') {
       dispatch(setNuevaTarea({nuevaTarea: [title, description, selection, selection2, selection3]}));
@@ -48,7 +48,7 @@ export const NuevaTareaPage = () => {
       alert('Ningún campo puede estar vacío');
     }
     
-  }
+  };
 
   //Efectos********************************************************
 

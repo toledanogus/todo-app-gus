@@ -39,7 +39,35 @@ export const getTarea = () => async (dispatch, getState) => {
     jsonFiltro['tareaID'] = tareaID;
 
     const {data} = await tareaApi.post (`/getTareaID.php`, jsonFiltro);
-    console.log(`Obtenidas del mysql PARA UNAAAAA${data}`);
+    /* console.log(`Obtenidas del mysql PARA UNAAAAA${data}`); */
     dispatch(setTarea({tarea: data}));
 
+};
+
+export const deleteTarea = () => async (dispatch, getState) => {
+    const state = getState();
+    const tareaID = state.tarea.tareaID;
+
+    const jsonFiltro = new Object();
+    jsonFiltro['tareaID'] = tareaID;
+
+    const {data} = await tareaApi.post (`/borrarTarea.php`, jsonFiltro);
+    console.log(`Obtenidas del mysql Nada de nada${data}`);
+};
+
+export const editTarea = () => async (dispatch, getState) => {
+    const state = getState();
+    const tareaID = state.tarea.tareaID;
+    const tareaEditada = state.tarea.tareaEditada;
+    console.log(`Por que cero no existe${tareaEditada}`);
+
+    const jsonEditada = new Object();
+    jsonEditada['tareaID'] = tareaID;
+    jsonEditada['title'] = tareaEditada[0];
+    jsonEditada['description'] = tareaEditada[1];
+    jsonEditada['priority'] = tareaEditada[2];
+    jsonEditada['fecha'] = tareaEditada[3];
+
+    const {data} = await tareaApi.post (`/editarTarea.php`, jsonEditada);
+    console.log(`Obtenidas del mysql Nada de nada${data}`);
 };
