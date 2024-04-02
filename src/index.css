@@ -1,3 +1,56 @@
 body{
-  background-color:rgb(232, 232, 255)   ;
+  background-color:rgb(255, 255, 255);
+  display: flex;
 }
+
+h1{
+  color: #367FBF;
+}
+
+div.containerInicio{
+  display: flex;
+  
+}
+
+
+div.personal, div.todas, div.casa, div.diversion{
+  background-color: #FAF2E7;
+  height:120px;
+  width: 33%;
+  border-radius: 20px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;  
+  align-items:center;
+}
+
+div.escuela, div.salud {
+  background-color: #E1EDEB;
+  height:120px;
+  width: 33%;
+  border-radius: 20px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;  
+  align-items:center;
+}
+
+
+
+/*#FAF2E7
+/*#E1EDEB
+
+/* Color Theme Swatches in Hex */
+.art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-1-hex { color: #F2BBEF; }
+.art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-2-hex { color: #F2DCF2; }
+.art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-3-hex { color: #367FBF; }
+.art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-4-hex { color: #55B3D9; }
+.art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-5-hex { color: #F2D5C4; }
+
+/* Color Theme Swatches in RGBA */
+.art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-1-rgba { color: rgba(242, 186, 238, 1); }
+.art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-2-rgba { color: rgba(241, 220, 242, 1); }
+.art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-3-rgba { color: rgba(53, 126, 191, 1); }
+.art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-4-rgba { color: rgba(84, 179, 216, 1); }
+.art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-5-rgba { color: rgba(242, 213, 196, 1); }
+
