@@ -1,10 +1,24 @@
+@font-face {
+  font-family: 'Gus';
+  src: local('Gus'), url('./assets/AvenirNextLTPro-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Gus2';
+  src: local('Gus2'), url('./assets/GreatVibes-Regular.otf');
+}
+
 body{
-  background-color:rgb(255, 255, 255);
+  background-color:#fffaf8;
   display: flex;
+  font-family: 'Gus';
 }
 
 h1{
-  color: #367FBF;
+  color: #7CABB2;
+  font-family: 'Gus2';
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 div.containerInicio{
@@ -14,7 +28,7 @@ div.containerInicio{
 
 
 div.personal, div.todas, div.casa, div.diversion{
-  background-color: #FAF2E7;
+  background-color: #CBF7FF;
   height:120px;
   width: 33%;
   border-radius: 20px;
@@ -22,10 +36,12 @@ div.personal, div.todas, div.casa, div.diversion{
   display: flex;
   justify-content: center;  
   align-items:center;
+  border: 3px solid #DEDEDD;
+  font-family: 'Gus';
 }
 
 div.escuela, div.salud {
-  background-color: #E1EDEB;
+  background-color: #FFD7E9;
   height:120px;
   width: 33%;
   border-radius: 20px;
@@ -33,12 +49,121 @@ div.escuela, div.salud {
   display: flex;
   justify-content: center;  
   align-items:center;
+  border: 3px solid #DEDEDD;
+  font-family: 'Gus';
 }
 
+button{
+  width: 100%;
+  background-color: #B2B2B2;
+  border-radius: 10px;
+  padding: 10px;
+  border: 3px solid #DEDEDD;
+  font-size: medium;
+  color: #fffaf8;
+}
 
+.lista-tareas ul {
+  list-style: none;
+  padding: 0;
+}
 
+.lista-tareas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Ajusta el espacio entre elementos de la lista */
+}
+
+.lista-tareas label {
+  flex-basis: 50%; /* Ajusta este valor según necesites */
+}
+
+.lista-tareas input,
+.lista-tareas select,
+.lista-tareas textarea {
+  flex-basis: 50%; /* Ajusta este valor según necesites */
+}
+
+td {
+  white-space: nowrap;
+  text-align: center;
+  padding: 5px;
+}
+
+.tituloTarea{
+  text-align: left;
+}
+
+button.registrar{
+  background-color:#CBF7FF;
+  color: #7CABB2;
+  margin: 10px;
+}
+
+button.aInicio{
+  background-color: #FFD7E9;
+  color: #7CABB2;
+  margin: 10px;
+}
+
+.arrow{
+  color:#55B3D9;
+}
+
+.equis{
+  color:#F2BBEF;
+}
+
+.categoria{
+  text-transform:capitalize;
+  text-align:left;
+}
+
+th{
+  background-color:#55B3D9;
+  border-radius: 8px;
+  border: 3px solid #DEDEDD;
+  padding: 5px;
+  color: #f0f0f0;
+}
 /*#FAF2E7
 /*#E1EDEB
+/* Color Theme Swatches in Hex */
+.Pastel-2-1-hex { color: #7CABB2; }
+.Pastel-2-2-hex { color: #FFD7E9; }
+.Pastel-2-3-hex { color: #CBF7FF; }
+.Pastel-2-4-hex { color: #CCCBC4; }
+.Pastel-2-5-hex { color: #B2B2B2; }
+
+/* Color Theme Swatches in RGBA */
+.Pastel-2-1-rgba { color: rgba(124, 170, 177, 1); }
+.Pastel-2-2-rgba { color: rgba(255, 214, 232, 1); }
+.Pastel-2-3-rgba { color: rgba(202, 246, 255, 1); }
+.Pastel-2-4-rgba { color: rgba(204, 202, 195, 1); }
+.Pastel-2-5-rgba { color: rgba(177, 177, 177, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Pastel-2-1-hsla { color: hsla(187, 25, 59, 1); }
+.Pastel-2-2-hsla { color: hsla(333, 100, 92, 1); }
+.Pastel-2-3-hsla { color: hsla(189, 100, 89, 1); }
+.Pastel-2-4-hsla { color: hsla(52, 7, 78, 1); }
+.Pastel-2-5-hsla { color: hsla(0, 0, 69, 1); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Color Theme Swatches in Hex */
 .art-photography-of-abstract-fluid-art-painting-with-alcohol-ink,-pastel-colors-1-hex { color: #F2BBEF; }

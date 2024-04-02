@@ -25,69 +25,67 @@ export const InicioPage = () => {
     <>
       <h1>Gestión de Pendientes</h1>
       <div className="containerInicio">
-        <div className="todas" colSpan="4">
-          <span
-            onClick={() => {
-              const nuevoFiltro = "todas";
-              aListaDeTareas(nuevoFiltro);
-            }}
-          >
-            Todas
-          </span>
+        <div
+          className="todas"
+          colSpan="4"
+          onClick={() => {
+            const nuevoFiltro = "todas";
+            aListaDeTareas(nuevoFiltro);
+          }}
+        >
+          Todas
         </div>
-        <div className="escuela" colSpan="4">
-          <span
-            onClick={() => {
-              const nuevoFiltro = "escuela";
-              aListaDeTareas(nuevoFiltro);
-            }}
-          >
-            Escuela
-          </span>
+        <div
+          className="escuela"
+          colSpan="4"
+          onClick={() => {
+            const nuevoFiltro = "escuela";
+            aListaDeTareas(nuevoFiltro);
+          }}
+        >
+          Escuela
         </div>
-        <div className="casa" colSpan="4">
-          <span
-            onClick={() => {
-              const nuevoFiltro = "casa";
-              aListaDeTareas(nuevoFiltro);
-            }}
-          >
-            Casa
-          </span>
+        <div
+          className="casa"
+          colSpan="4"
+          onClick={() => {
+            const nuevoFiltro = "casa";
+            aListaDeTareas(nuevoFiltro);
+          }}
+        >
+          Casa
         </div>
       </div>
-{/* linea siguiente *************************************/}
+      {/* linea siguiente *************************************/}
       <div className="containerInicio">
-      <div className="personal" colSpan="4">
-        <button
+        <div
+          className="personal"
+          colSpan="4"
           onClick={() => {
             const nuevoFiltro = "personal";
             aListaDeTareas(nuevoFiltro);
           }}
         >
           Personal
-        </button>
-      </div>
-      
-        <div className="salud">
-          <button
-            onClick={() => {
-              const nuevoFiltro = "salud";
-              aListaDeTareas(nuevoFiltro);
-            }}
-          >
-            Salud
-          </button>
         </div>
-        <div className="diversion">
-          <button
-            onClick={() => {
-              const nuevoFiltro = "diversion";
-              aListaDeTareas(nuevoFiltro);
-            }}
-          >
-            Diversión
-          </button>
+
+        <div
+          className="salud"
+          onClick={() => {
+            const nuevoFiltro = "salud";
+            aListaDeTareas(nuevoFiltro);
+          }}
+        >
+          Salud
+        </div>
+        <div
+          className="diversion"
+          onClick={() => {
+            const nuevoFiltro = "diversion";
+            aListaDeTareas(nuevoFiltro);
+          }}
+        >
+          Diversión
         </div>
       </div>
       <br />

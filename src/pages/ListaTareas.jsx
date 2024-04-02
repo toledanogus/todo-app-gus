@@ -91,7 +91,7 @@ export const ListaTareas = () => {
           {tareas &&
             tareas.map((elemento, index) => (
               <tr key={index}>
-                <td onClick={() => aDetalles(elemento[6])}>{elemento[0]}</td>
+                <td className="tituloTarea" onClick={() => aDetalles(elemento[6])}>{elemento[0]}</td>
                 <td>{elemento[2]}</td>
                 <td>
                   {elemento[3] === 0 ? (
@@ -107,16 +107,16 @@ export const ListaTareas = () => {
                   {elemento[3] ? (
                     <span className="arrow">✓</span>
                   ) : (
-                    <span className="noPagado">x</span>
+                    <span className="equis">x</span>
                   )}
                 </td>
-                <td>{formatDate(elemento[4])}</td>
-                <td>{elemento[5]}</td>
+                <td className="tituloTarea">{formatDate(elemento[4])}</td>
+                <td className="categoria">{elemento[5]}</td>
                 <td>
-                  <button onClick={() => editar(elemento[6])}>Editar</button>
+                  <button className="registrar" onClick={() => editar(elemento[6])}>Editar</button>
                 </td>
                 <td>
-                  <button onClick={() => borrar(elemento[6])}>Borrar</button>
+                  <button className="aInicio" onClick={() => borrar(elemento[6])}>Borrar</button>
                 </td>
               </tr>
             ))}

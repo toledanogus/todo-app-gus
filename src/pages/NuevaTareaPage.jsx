@@ -56,17 +56,18 @@ export const NuevaTareaPage = () => {
     <>
       <h1>NuevaTareaPage</h1>
 
-      <div>
-        Nueva Tarea:
+      <div className="lista-tareas">
+        <h2>Nueva Tarea:</h2>
         <ul>
-          <li>
-            Título: <input type="text" value={title} onChange={onHandleChangeTitulo}/>
+          <li className="tarea">
+            <label>Título:</label> <input type="text" value={title} onChange={onHandleChangeTitulo}/>
           </li>
-          <li>
-            Descripción: <textarea type="text" value={description} onChange={onHandleChangeDescription}/>
+          <li className="tarea">
+            <label>Descripción:</label>
+             <textarea type="text" value={description} onChange={onHandleChangeDescription}/>
           </li>
-          <li>
-            Categoría:
+          <li className="tarea">
+            <label >Categoría:</label>
             <select value={selection} onChange={onHandleChange}>
               <option value="">Elige una:</option>
               <option value="escuela">Escuela</option>
@@ -76,8 +77,9 @@ export const NuevaTareaPage = () => {
               <option value="diversion">Diversión</option>
             </select>
           </li>
-          <li>
-            Prioridad:
+          <li className="tarea">
+            <label >Prioridad:</label>
+            
             <select value={selection2} onChange={onHandleChange2}>
               <option value="">Elige una:</option>
               <option value="3">Alta</option>
@@ -85,20 +87,21 @@ export const NuevaTareaPage = () => {
               <option value="1">Baja</option>
             </select>
           </li>
-          <li>
-            Fecha límite: <input type="date" onChange={onHandleChange3} />
+          <li className="tarea">
+            <label>Fecha límite:</label>
+             <input type="date" onChange={onHandleChange3} />
           </li>
         </ul>
       </div>
-      <button onClick={registrarNuevaTarea}>Registrar</button>
+      <button className="registrar" onClick={registrarNuevaTarea}>Registrar</button>
       <br />
-      <button onClick={aInicio}>Ir a Inicio</button>
-      <p>Categoría: {selection}</p>
+      <button className="aInicio" onClick={aInicio}>Ir a Inicio</button>
+      {/* <p>Categoría: {selection}</p>
       <p>Prioridad: {selection2}</p>
       <p>Fecha: {selection3}</p>
       <p>Título: {title}</p>
       <p>Descripción: {description}</p>
-      <p>Nueva tarea: {nuevaTarea}</p>
+      <p>Nueva tarea: {nuevaTarea}</p> */}
     </>
   );
 };
