@@ -32,7 +32,7 @@ export const InicioPage = () => {
               aListaDeTareas(nuevoFiltro);
             }}
           >
-            Todas las Tareas
+            Todas
           </span>
         </div>
         <div className="escuela" colSpan="4">
