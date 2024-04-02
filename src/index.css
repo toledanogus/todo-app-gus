@@ -12,6 +12,7 @@ body{
   background-color:#fffaf8;
   display: flex;
   font-family: 'Gus';
+  justify-content: center;
 }
 
 h1{
@@ -19,10 +20,12 @@ h1{
   font-family: 'Gus2';
   padding-left: 40px;
   padding-right: 40px;
+  text-align: center;
 }
 
 div.containerInicio{
   display: flex;
+  justify-content: center;
   
 }
 
@@ -61,6 +64,7 @@ button{
   border: 3px solid #DEDEDD;
   font-size: medium;
   color: #fffaf8;
+  width: 77%;
 }
 
 .lista-tareas ul {
@@ -98,13 +102,16 @@ td {
 button.registrar{
   background-color:#CBF7FF;
   color: #7CABB2;
-  margin: 10px;
+  margin-top: 10px;
+  width: 77%;
 }
 
 button.aInicio{
   background-color: #FFD7E9;
   color: #7CABB2;
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 77%;
 }
 
 .arrow{
@@ -127,6 +134,86 @@ th{
   padding: 5px;
   color: #f0f0f0;
 }
+
+legend{
+  font-weight:bold;
+}
+
+img {
+  padding: 5px;
+  width: 18px;
+}
+
+.vacio{
+  background-color:#dededd00;
+  border: none;
+}
+
+.uper{
+  text-transform: capitalize;
+}
+
+fieldset{
+  background-color:white;
+  width: 70%;
+}
+
+#completa1, .completa1{
+  text-decoration: line-through;
+}
+
+.completada{
+  color:#367FBF;
+  font-weight: bolder;
+}
+
+h2{
+  text-align: center;
+}
+
+.textoArea {
+  resize: none; /* Evita que se pueda redimensionar manualmente */
+  overflow: hidden; /* Oculta el desbordamiento */
+  height: auto; /* Ajusta automáticamente la altura */
+  width: 100%; /* Expande al 100% del ancho disponible */
+}
+
+.contenedorx{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-width: 350px;
+}
+
+.contenedorcomplejo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+
+}
+.nuevaTarea{
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.textareacompleja{
+  width: 97%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*#FAF2E7
 /*#E1EDEB
 /* Color Theme Swatches in Hex */
@@ -149,19 +236,6 @@ th{
 .Pastel-2-3-hsla { color: hsla(189, 100, 89, 1); }
 .Pastel-2-4-hsla { color: hsla(52, 7, 78, 1); }
 .Pastel-2-5-hsla { color: hsla(0, 0, 69, 1); }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,17 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
 import { editTarea, getTarea } from "../store/slices/thunks";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { setTareaEditada } from "../store/slices/tareaSlice";
+import { useNavigate } from "react-router-dom";
 
 export const EditarTarea = () => {
   //Constantes***************************************************************
   const { tarea } = useSelector((state) => state.tarea);
   const dispatch = useDispatch();
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("");
   const [fecha, setFecha] = useState("");
-  const [rayos, setRayos] = useState(0);
+  const textareaRef = useRef(null);
+  const navigate= useNavigate();
 
   //Funciones***************************************************************
   const onHandleChangePriority = (event) => {
@@ -20,22 +22,30 @@ export const EditarTarea = () => {
   const onHandleChangeFecha = (event) => {
     setFecha(event.target.value);
   };
-  const onHandleChangeTitulo = ({target}) => {
-    setTitle(target.value)
+  const onHandleChangeTitulo = ({ target }) => {
+    setTitle(target.value);
   };
-  const onHandleChangeDescription = ({target}) => {
-    setDescription(target.value)
-  }
+  const onHandleChangeDescription = ({ target }) => {
+    setDescription(target.value);
+  };
 
   const enviarEditada = () => {
     if (title && description && priority && fecha) {
-      dispatch(setTareaEditada({tareaEditada: [title, description, priority, fecha]}));
+      dispatch(
+        setTareaEditada({ tareaEditada: [title, description, priority, fecha] })
+      );
       dispatch(editTarea());
-    } else{
-      alert('Ningún campo puede estar vacío');
+      alert('Se modificó exitosamente.');
+      navigate('/detalles');
+    } else {
+      alert("Ningún campo puede estar vacío");
     }
-    
+  };
+
+  const aInicio = () => {
+    navigate("/inicio");
   }
+
   //Efectos***************************************************************
   useEffect(() => {
     dispatch(getTarea());
@@ -54,55 +64,80 @@ export const EditarTarea = () => {
     }
   }, [tarea]);
 
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height =
+        textareaRef.current.scrollHeight + "px";
+    }
+  }, [description]);
+
   return (
     <>
-      <div>EditarTarea</div>
-      <p>{JSON.stringify(tarea)}</p>
-      <table>
-        <thead>
-          <th>Tarea</th>
-          <th>Descripción</th>
-          <th>Prioridad</th>
-          <th>Fecha Límite</th>
-        </thead>
-        <tbody>
-          {tarea &&
-            tarea.map((elemento, index) => (
-              <tr key={index}>
-                <td> <input 
-                type="text" 
-                value={title || elemento[0]} 
+      <h1>EditarTarea</h1>
+      <div className="contenedorcomplejo">
+        {tarea &&
+          tarea.map((elemento, index) => (
+            <fieldset key={index}>
+              <legend>Tarea</legend>
+              <input
+                type="text"
+                value={title || elemento[0]}
                 onChange={onHandleChangeTitulo}
                 onClick={(event) => event.target.select()}
-                /></td>
-                <td><textarea 
-                value={description || elemento[1]} 
+              />
+            </fieldset>
+          ))}
+
+        {tarea &&
+          tarea.map((elemento, index) => (
+            <fieldset key={index}>
+              <legend>Descripción</legend>
+              <textarea
+                className="textareacompleja"
+                ref={textareaRef}
+                value={description || elemento[1]}
                 onChange={onHandleChangeDescription}
                 onClick={(event) => event.target.select()}
-                ></textarea></td>
-                <td><select 
-                value={priority || elemento[2]} 
-                onChange={onHandleChangePriority}>
-              <option value="">Elige una:</option>
-              <option value="3">Alta</option>
-              <option value="2">Normal</option>
-              <option value="1">Baja</option>
-            </select></td>
-                <td><input 
+                style={{ overflow: "hidden", resize: "none", height: "auto" }}
+              ></textarea>
+            </fieldset>
+          ))}
+
+        {tarea &&
+          tarea.map((elemento, index) => (
+            <fieldset key={index}>
+              <legend>Prioridad</legend>
+              <select
+                value={priority || elemento[2]}
+                onChange={onHandleChangePriority}
+              >
+                <option value="">Elige una:</option>
+                <option value="3">Alta</option>
+                <option value="2">Normal</option>
+                <option value="1">Baja</option>
+              </select>
+            </fieldset>
+          ))}
+
+        {tarea &&
+          tarea.map((elemento, index) => (
+            <fieldset key={index}>
+              <legend>Fecha Límite</legend>
+              <input
                 type="date"
                 value={fecha || elemento[4]}
                 onChange={onHandleChangeFecha}
                 onClick={(event) => event.target.select()}
-                 /></td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
-      <div>{title && title}</div>
-      <div>{description && description}</div>
-      <div>{priority && priority}</div>
-      <div>{fecha && fecha}</div>
-      <button onClick={enviarEditada}>Guardar Cambios</button>
+              />
+            </fieldset>
+          ))}
+
+        <button className="registrar" onClick={enviarEditada}>
+          Guardar Cambios
+        </button>
+        <button onClick={aInicio} className="aInicio">Inicio</button>
+      </div>
     </>
   );
 };

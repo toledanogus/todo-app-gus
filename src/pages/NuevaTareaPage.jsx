@@ -44,6 +44,7 @@ export const NuevaTareaPage = () => {
       setSelection('');
       setSelection2('');
       setSelection3('');
+      alert('¡Registro exitoso!');
     } else{
       alert('Ningún campo puede estar vacío');
     }
@@ -93,9 +94,10 @@ export const NuevaTareaPage = () => {
           </li>
         </ul>
       </div>
+      <div className="contenedorx">
       <button className="registrar" onClick={registrarNuevaTarea}>Registrar</button>
-      <br />
       <button className="aInicio" onClick={aInicio}>Ir a Inicio</button>
+      </div>
       {/* <p>Categoría: {selection}</p>
       <p>Prioridad: {selection2}</p>
       <p>Fecha: {selection3}</p>

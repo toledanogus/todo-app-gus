@@ -88,9 +88,9 @@ export const InicioPage = () => {
           Diversión
         </div>
       </div>
-      <br />
-      <br />
-      <button onClick={aNuevaTarea}>Nueva Tarea</button>
+      <div className="containerInicio">
+        <button className="nuevaTarea" onClick={aNuevaTarea}>Nueva Tarea</button>
+      </div>
     </>
   );
 };
