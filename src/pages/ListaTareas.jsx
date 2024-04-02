@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { deleteTarea, getTareas, sendSolved } from "../store/slices/thunks";
+import { useEffect} from "react";
+import { getTareas } from "../store/slices/thunks";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setSolved, setTareaID } from "../store/slices/tareaSlice";
+import { setTareaID } from "../store/slices/tareaSlice";
 import etiquetaImage1 from "../assets/etiqueta1.png";
 import etiquetaImage2 from "../assets/etiqueta2.png";
 import etiquetaImage3 from "../assets/etiqueta3.png";

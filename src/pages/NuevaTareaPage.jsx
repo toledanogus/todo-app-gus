@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setNuevaTarea } from "../store/slices/tareaSlice";
 import { registrarEnBase } from "../store/slices/thunks";
@@ -13,7 +13,6 @@ export const NuevaTareaPage = () => {
   const [selection3, setSelection3] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const {nuevaTarea} = useSelector ((state)=>state.tarea);
   const dispatch = useDispatch();
 
   //Funciones******************************************************

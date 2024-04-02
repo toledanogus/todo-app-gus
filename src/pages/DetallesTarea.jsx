@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getTarea } from "../store/slices/thunks";
 import { useEffect, useState } from "react";
-import { deleteTarea, getTareas, sendSolved } from "../store/slices/thunks";
+import { deleteTarea, sendSolved } from "../store/slices/thunks";
 import { setSolved, setTareaID } from "../store/slices/tareaSlice";
 import { useNavigate } from "react-router-dom";
 import label1 from "../assets/etiqueta1.png";

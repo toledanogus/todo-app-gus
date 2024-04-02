@@ -1,11 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setFiltro } from "../store/slices/tareaSlice";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+
 
 export const InicioPage = () => {
   //Constantes**********************************************
-  const { counter } = useSelector((state) => state.tarea);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
